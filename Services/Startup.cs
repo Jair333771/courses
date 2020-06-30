@@ -18,6 +18,9 @@ namespace Services
 {
     public class Startup
     {
+
+        private readonly string cors = "mycors";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -35,10 +38,21 @@ namespace Services
                 })
             );
 
-            services.AddControllers().AddNewtonsoftJson(options => {
-                options.SerializerSettings.DefaultValueHandling = DefaultValueHandling.Ignore;
-                options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            services.AddControllers().AddNewtonsoftJson(opt =>
+            {
+                opt.SerializerSettings.DefaultValueHandling = DefaultValueHandling.Ignore;
+                opt.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
+
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy(cors, builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200", "*")
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+                });
             });
         }
 
@@ -60,6 +74,8 @@ namespace Services
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCors(cors);
         }
     }
 }
