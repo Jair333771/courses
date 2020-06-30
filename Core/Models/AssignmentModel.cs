@@ -10,7 +10,7 @@ namespace Core.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "El userid es requerido")]
-        public int UserId { get; set; }
+        public int PersonId { get; set; }
 
         [Required(ErrorMessage = "El curso es requerido")]
         public int CourseId { get; set; }

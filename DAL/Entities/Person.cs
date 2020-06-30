@@ -15,6 +15,9 @@ namespace DAL.Entities
         [Required(ErrorMessage = "El nombre completo es requerido")]
         public string FullName { get; set; }
 
+        [Required(ErrorMessage = "El Document es requerido")]
+        public string Document { get; set; }
+
         [Required(ErrorMessage = "El correo es requerido")]
         public string Email { get; set; }
 
@@ -35,6 +38,7 @@ namespace DAL.Entities
             return new Person
             {
                 Id = obj.Id,
+                Document = obj.Document,
                 FullName = obj.FullName,
                 Email = obj.Email,
                 BornDate = obj.BornDate,

@@ -14,6 +14,8 @@ namespace Core.Models
 
             public virtual string FullName { get; set; }
 
+            public virtual string Document { get; set; }
+
             public virtual string Email { get; set; }
 
             public virtual DateTime BornDate { get; set; }
@@ -27,6 +29,9 @@ namespace Core.Models
         {
             [Required(ErrorMessage = "El nombre completo es requerido")]
             public override string FullName { get; set; }
+
+            [Required(ErrorMessage = "El Document es requerido")]
+            public override string Document { get; set; }
 
             [Required(ErrorMessage = "El correo es requerido")]
             public override string Email { get; set; }

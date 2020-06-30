@@ -27,6 +27,12 @@ namespace DAL.Repositories
             return table.Find(id);
         }
 
+        public T GetByName(string name)
+        {
+            T obj = table.Find(name);
+            return obj;
+        }
+
         public int Add(T obj)
         {
             table.Add(obj);
@@ -45,5 +51,6 @@ namespace DAL.Repositories
             table.Remove(obj);
             return db.SaveChanges();
         }
+
     }
 }

@@ -33,7 +33,18 @@ namespace BLL.Logic
 
         public ResponseModel Add(CourseModel.CourseUpdateModel model)
         {
-            var state = repo.Add(model);
+            var course = repo.GetByName(model.Name);
+            int state;
+
+            if (course == null)
+            {
+                state = repo.Add(model);
+            }
+            else
+            {
+                state = 1;
+            }
+
             SetObjectResponse(model, state);
             return response;
         }

@@ -19,6 +19,13 @@ namespace BLL.Logic
 
             try
             {
+                if (state == -1) 
+                {
+                    response.Data = obj;
+                    message = messageList.ErrorList
+                        .Where(x => x.Id == 3)
+                        .FirstOrDefault();
+                }
                 if (obj != null && state == 1)
                 {
                     response.Data = obj;

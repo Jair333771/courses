@@ -33,7 +33,7 @@ namespace Core.Models
             },
             new MessageModel {
                 Id = 3,
-                Description = "El dato que ingreso no existe en la bd",
+                Description = "El dato que ingreso ya existe en la bd",
                 Status = HttpStatusCode.BadRequest
             },
             new MessageModel {

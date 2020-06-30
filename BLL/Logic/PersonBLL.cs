@@ -32,7 +32,18 @@ namespace BLL.Logic
 
         public ResponseModel Add(PersonModel.PersonUpdateModel model)
         {
-            var state = repo.Add(model);
+            var person = repo.GetByDocument(model.Document);
+            int state;
+
+            if (person == null)
+            {
+                state = repo.Add(model);
+            }
+            else 
+            {
+                state = 1;
+            }
+
             SetObjectResponse(model, state);
             return response;
         }

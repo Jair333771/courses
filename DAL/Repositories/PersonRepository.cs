@@ -14,6 +14,13 @@ namespace DAL.Repositories
             this.db = db;
         }
 
+        public Person GetByDocument(string document) {
+            var obj = db.Person
+                .Where(x => x.Document == document)
+                .FirstOrDefault();
+            return obj;
+        } 
+
         public List<StoredProcedure.GetByAgeRange_Result> GetByAgeRange()
         {
             var list = db.GetByAgeRange_Result

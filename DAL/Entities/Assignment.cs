@@ -11,13 +11,13 @@ namespace DAL.Entities
         public int Id { get; set; }
 
         [Required(ErrorMessage = "El userid es requerido")]
-        public int UserId { get; set; }
+        public int PersonId { get; set; }
 
         [Required(ErrorMessage = "El curso es requerido")]
         public int CourseId { get; set; }
 
         [NotMapped]
-        public virtual ICollection<Person> User { get; set; }
+        public virtual ICollection<Person> Person { get; set; }
 
         [NotMapped]
         public virtual ICollection<Course> Course { get; set; }
@@ -27,7 +27,7 @@ namespace DAL.Entities
             return new Assignment
             {
                 Id = obj.Id,
-                UserId = obj.UserId,
+                PersonId = obj.PersonId,
                 CourseId = obj.CourseId
             };
         }
@@ -37,7 +37,7 @@ namespace DAL.Entities
             return new AssignmentModel
             {
                 Id = obj.Id,
-                UserId = obj.UserId,
+                PersonId = obj.PersonId,
                 CourseId = obj.CourseId
             };
         }

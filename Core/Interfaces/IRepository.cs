@@ -8,6 +8,8 @@ namespace Core.Interfaces
 
         public T GetById(int id);
 
+        public T GetByName(string name);
+
         public int Add(T obj);
 
         public int Update(T obj);
