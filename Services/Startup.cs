@@ -18,7 +18,6 @@ namespace Services
 {
     public class Startup
     {
-
         private readonly string cors = "mycors";
 
         public Startup(IConfiguration configuration)
@@ -51,6 +50,7 @@ namespace Services
                 {
                     builder.WithOrigins("http://localhost:4200", "*")
                       .AllowAnyHeader()
+                      .AllowAnyOrigin()
                       .AllowAnyMethod();
                 });
             });
