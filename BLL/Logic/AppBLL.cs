@@ -19,7 +19,7 @@ namespace BLL.Logic
 
             try
             {
-                if (state == -1) 
+                if (state == 3) 
                 {
                     response.Data = obj;
                     message = messageList.ErrorList

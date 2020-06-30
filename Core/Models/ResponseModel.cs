@@ -40,6 +40,11 @@ namespace Core.Models
                 Id = 4,
                 Description = "Ha ocurrido un error inesperado mientras se procesaba tu solicitud",
                 Status = HttpStatusCode.InternalServerError
+            },
+            new MessageModel {
+                Id = 5,
+                Description = "Hay un problema con tu petición, los datos no son correctos, revisalos e inténtalo nuevamente.",
+                Status = HttpStatusCode.InternalServerError
             }
         };
     }

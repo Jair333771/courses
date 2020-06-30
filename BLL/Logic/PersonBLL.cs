@@ -39,9 +39,9 @@ namespace BLL.Logic
             {
                 state = repo.Add(model);
             }
-            else 
+            else
             {
-                state = 1;
+                state = 3;
             }
 
             SetObjectResponse(model, state);

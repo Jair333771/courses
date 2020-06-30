@@ -42,7 +42,7 @@ namespace BLL.Logic
             }
             else
             {
-                state = 1;
+                state = 3;
             }
 
             SetObjectResponse(model, state);
